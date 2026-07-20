@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Literacy — Understanding AI in Higher Education | SETU</title>
+  <meta name="description" content="Module 1 of the SETU GenAI programme. A one-hour self-paced foundation in AI literacy for SETU staff." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== TOP BAR ===================== -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand-lockup">
+        <!-- SETU team: replace .brand-mark with <img> of the official logo -->
+        <div class="brand-mark" aria-hidden="true">SETU</div>
+        <div class="brand-text">
+          <b>GenAI Programme · Module 1</b>
+          <span>AI Literacy</span>
+        </div>
+      </div>
+      <div class="topbar__spacer"></div>
+      <div class="progress" aria-hidden="false">
+        <span class="progress__label-long">Progress</span>
+        <div class="progress__track" role="progressbar" aria-label="Course progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress__fill" id="progressFill"></div>
+        </div>
+        <span id="progressPct">0%</span>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="toc">☰ Contents</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- ===================== TABLE OF CONTENTS ===================== -->
+    <div class="toc-backdrop" id="tocBackdrop"></div>
+    <nav class="toc" id="toc" aria-label="Course contents">
+      <h2>Contents</h2>
+      <ol id="tocList"><!-- populated by JS --></ol>
+    </nav>
+
+    <!-- ===================== CONTENT ===================== -->
+    <main class="content" id="main">
+
+      <!-- ---------- 0. COVER ---------- -->
+      <section class="section is-active" data-title="Start here" data-nav="Start">
+        <div class="cover__hero">
+          <span class="eyebrow"><span class="dot"></span> SETU GenAI Programme · Course 1 of 3</span>
+          <h1>AI Literacy</h1>
+          <p>Understanding AI in Higher Education — the shared foundation for every member of SETU staff.</p>
+          <div class="cover__facts">
+            <div><b>~60 min</b><span>Self-paced</span></div>
+            <div><b>9</b><span>Short topics</span></div>
+            <div><b>No jargon</b><span>No maths required</span></div>
+          </div>
+        </div>
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> What you'll be able to do</span>
+          <h1>Learning outcomes</h1>
+          <p class="lede">By the end of this module you should be able to:</p>
+          <ul class="outcomes">
+            <li><span class="ck">✓</span><span>Explain what Generative AI is, in plain language.</span></li>
+            <li><span class="ck">✓</span><span>Distinguish the different types of AI you'll hear about.</span></li>
+            <li><span class="ck">✓</span><span>Understand what today's AI is good at — and where it falls short.</span></li>
+            <li><span class="ck">✓</span><span>Recognise the common risks, from bias to privacy.</span></li>
+            <li><span class="ck">✓</span><span>Understand the ethical and legal issues that apply to your work.</span></li>
+            <li><span class="ck">✓</span><span>Know where to find SETU's guidance and governance.</span></li>
+            <li><span class="ck">✓</span><span>Use AI safely and responsibly in your role.</span></li>
+          </ul>
+          <div class="callout callout--info">
+            <p class="callout__title">ℹ️ How this works</p>
+            <p>Work through the topics in order using the buttons at the bottom of the screen, or jump around using the Contents panel. Your progress is saved automatically on this device — you can close the page and pick up where you left off. There's no test to pass; the short activities are just to help things stick.</p>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn--primary" data-goto="next">Start the course →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 1. WELCOME ---------- -->
+      <section class="section" data-title="Welcome" data-nav="Welcome">
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> Topic 1</span>
+          <h1>Welcome</h1>
+          <p class="lede">Why this matters — and why SETU is investing in it now.</p>
+          <div class="meta-row"><span>⏱️ ~5 min</span><span>📖 Read</span></div>
+          <hr class="rule" />
+
+          <h2>Why AI matters</h2>
+          <p>Generative AI has moved from a research curiosity to an everyday tool in the space of a couple of years. Students are already using it. Employers expect graduates to understand it. And it is quietly reshaping how teaching, research, and professional services get done across every university.</p>
+          <p>You don't need to become a technologist. You do need enough literacy to make good judgements: when a tool helps, when it doesn't, and where the limits and risks sit.</p>
+
+          <h2>Why SETU is investing in AI</h2>
+          <p>South East Technological University is investing in AI capability so that staff and students can benefit from these tools <em>confidently and responsibly</em> — with clear guidance, shared principles, and appropriate governance, rather than in an ad-hoc way. This module is the first step: a common baseline for everyone.</p>
+
+          <div class="callout callout--key">
+            <p class="callout__title">🎯 Key idea</p>
+            <p>The goal isn't to use AI for its own sake. It's to use good judgement about when and how it genuinely helps your work.</p>
+          </div>
+
+          <h2>AI and the future university</h2>
+          <p>The university of the next decade will treat AI fluency much as it treats digital literacy today: an expected, ordinary capability. Assessment, student support, administration, and research are all adapting. Being part of that conversation early — and shaping it — is better than reacting to it later.</p>
+
+          <h2>AI is a colleague — not a replacement</h2>
+          <p>Throughout this course, think of AI as a capable but unreliable assistant: fast, tireless, and surprisingly broad — but one whose work you must always check. It can draft, summarise, brainstorm, and explain. It cannot be accountable. <strong>You remain responsible for anything you produce with its help.</strong></p>
+        </div>
+      </section>
+
+      <!-- ---------- 2. WHAT IS AI ---------- -->
+      <section class="section" data-title="What is AI?" data-nav="What is AI?">
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> Topic 2</span>
+          <h1>What is AI?</h1>
+          <p class="lede">A simple map of the words people use — often interchangeably, and often wrongly.</p>
+          <div class="meta-row"><span>⏱️ ~7 min</span><span>🧩 Includes an activity</span></div>
+          <hr class="rule" />
+
+          <p>“AI” is an umbrella term. Underneath it sit several ideas that are related but not the same. Here's the plain-language version.</p>
+
+          <div class="ladder">
+            <div class="ladder__row"><b>Artificial Intelligence (AI)</b><span>The broad goal of getting computers to do things that would normally need human intelligence — recognising speech, spotting patterns, making decisions. The widest umbrella.</span></div>
+            <div class="ladder__row"><b>Machine Learning (ML)</b><span>A way of building AI by letting a system <em>learn patterns from examples</em> instead of being programmed with explicit rules. Most modern AI is machine learning.</span></div>
+            <div class="ladder__row"><b>Large Language Models (LLMs)</b><span>A type of machine-learning model trained on enormous amounts of text to predict likely words. This is the engine behind tools like ChatGPT, Claude and Copilot.</span></div>
+            <div class="ladder__row"><b>Generative AI</b><span>AI that <em>creates new content</em> — text, images, audio, video, code — rather than just classifying or predicting a number. LLMs are the text-and-language kind of generative AI.</span></div>
+            <div class="ladder__row"><b>Agents</b><span>Generative AI given the ability to <em>take actions in steps</em> — using tools, searching, or completing a multi-step task on your behalf, not just answering a single question.</span></div>
+          </div>
+
+          <div class="callout callout--key">
+            <p class="callout__title">🎯 One sentence to remember</p>
+            <p>Generative AI is machine learning that produces new content — and a chatbot is a large language model wrapped in a friendly interface.</p>
+          </div>
+
+          <!-- Interactive activity -->
+          <div class="activity" id="activity-ai" data-activity="which-ai">
+            <div class="activity__head">
+              <span class="activity__badge">Activity</span>
+              <strong>Which of these are AI?</strong>
+            </div>
+            <p style="font-size:15px;margin:0 0 4px">Tap the ones you think count as AI, then reveal the answers. Some are trickier than they look.</p>
+            <div class="chips" id="ai-chips">
+              <button class="chip" aria-pressed="false" data-ai="true"  data-why="A chatbot / LLM — generative AI.">A ChatGPT-style chatbot</button>
+              <button class="chip" aria-pressed="false" data-ai="false" data-why="Rule-based automation. A spreadsheet formula follows fixed instructions — no learning.">A spreadsheet formula (=SUM)</button>
+              <button class="chip" aria-pressed="false" data-ai="true"  data-why="Machine learning — it learns your inbox patterns to classify mail.">An email spam filter</button>
+              <button class="chip" aria-pressed="false" data-ai="true"  data-why="ML-based recommendation — it predicts what you'll watch next.">Netflix recommendations</button>
+              <button class="chip" aria-pressed="false" data-ai="false" data-why="A basic calculator applies fixed arithmetic rules — no learning involved.">A pocket calculator</button>
+              <button class="chip" aria-pressed="false" data-ai="true"  data-why="Computer vision — a machine-learning model recognising faces.">Face unlock on your phone</button>
+              <button class="chip" aria-pressed="false" data-ai="true"  data-why="Generative AI for images.">An image generator (e.g. DALL·E)</button>
+              <button class="chip" aria-pressed="false" data-ai="false" data-why="A thermostat follows a simple threshold rule. A 'smart' learning thermostat, however, would be AI.">A basic thermostat</button>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn--accent" data-reveal>Reveal answers</button>
+              <button class="btn btn--ghost" data-reset-activity>Reset</button>
+            </div>
+            <div class="activity__result" id="ai-result" hidden></div>
+          </div>
+          <p style="font-size:14.5px;color:var(--text-mute)">The trick: AI isn't “anything a computer does”. It's specifically systems that <em>learn from data</em> or <em>generate content</em>, rather than following fixed rules a person wrote out.</p>
+        </div>
+      </section>
+
+      <!-- ---------- 3. HOW AI WORKS ---------- -->
+      <section class="section" data-title="How AI works" data-nav="How AI works">
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> Topic 3</span>
+          <h1>How AI works</h1>
+          <p class="lede">No maths. Just the handful of ideas that explain most of what you'll see.</p>
+          <div class="meta-row"><span>⏱️ ~8 min</span><span>▶️ Includes an animation</span></div>
+          <hr class="rule" />
+
+          <h2>It's prediction, not knowledge</h2>
+          <p>An LLM does one deceptively simple thing: given the text so far, it predicts the next chunk of text. Then it does it again, and again. It has no database of facts it “looks up” — it has learned, from vast amounts of writing, which words tend to follow which.</p>
+
+          <!-- Animation -->
+          <div class="predictor" id="predictor">
+            <p style="font-size:14px;color:var(--text-mute);margin:0 0 10px">Watch it build a sentence one prediction at a time:</p>
+            <div class="predictor__sentence" id="predSentence"><span class="cursor"></span></div>
+            <div class="candidates" id="predCands" aria-hidden="true"></div>
+            <div class="btn-row">
+              <button class="btn btn--accent" id="predPlay">▶ Play</button>
+              <button class="btn btn--ghost" id="predReset">Reset</button>
+            </div>
+          </div>
+
+          <h2>Probability</h2>
+          <p>At each step there are many possible next words, each with a different likelihood. The model usually picks a likely one — but not always the single most likely, which is why the same question can give slightly different answers each time.</p>
+
+          <h2>Tokens</h2>
+          <p>The model doesn't read whole words — it reads <strong>tokens</strong>, small pieces of text (roughly ¾ of a word on average). “Understanding” might be two or three tokens. This is why AI tools have length limits measured in tokens, and why they sometimes miscount letters.</p>
+
+          <h2>Context window</h2>
+          <p>The <strong>context window</strong> is how much text the model can “hold in mind” at once — your prompt plus its reply plus the earlier conversation. Go beyond it and the earliest parts scroll out of view and are effectively forgotten. Long documents can exceed it.</p>
+
+          <h2>Hallucinations</h2>
+          <p>Because the model generates <em>plausible</em> text rather than retrieving <em>verified</em> facts, it can produce confident, fluent statements that are simply wrong — a made-up statistic, a fake citation, an invented quote. This is called a <strong>hallucination</strong>, and it's a feature of how the technology works, not a rare bug.</p>
+
+          <h2>Reasoning</h2>
+          <p>Newer models can “think” through a problem in steps before answering, which improves harder tasks like maths or logic. It's a real improvement — but it's still prediction underneath, and it can still be confidently wrong.</p>
+
+          <div class="callout callout--key">
+            <p class="callout__title">🎯 Key idea</p>
+            <p>An LLM is a very sophisticated autocomplete. That single fact explains its fluency, its creativity, and its most important weakness — that it can be wrong while sounding completely certain.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 4. CAPABILITIES ---------- -->
+      <section class="section" data-title="Capabilities" data-nav="Capabilities">
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> Topic 4</span>
+          <h1>Capabilities</h1>
+          <p class="lede">What today's tools are genuinely good at.</p>
+          <div class="meta-row"><span>⏱️ ~5 min</span><span>📖 Read</span></div>
+          <hr class="rule" />
+          <p>Modern general-purpose AI tools are strikingly versatile. Here's the range you're likely to meet:</p>
+          <div class="grid grid--2">
+            <div class="tile"><div class="tile__icon">✍️</div><h3>Text</h3><p>Drafting, summarising, rewriting, tone changes, structuring notes and emails.</p></div>
+            <div class="tile"><div class="tile__icon">🖼️</div><h3>Images</h3><p>Generating and editing images and diagrams from a text description.</p></div>
+            <div class="tile"><div class="tile__icon">🎬</div><h3>Video</h3><p>Producing short video clips and animations, and captioning or summarising footage.</p></div>
+            <div class="tile"><div class="tile__icon">💻</div><h3>Coding</h3><p>Writing, explaining, and debugging code — useful well beyond software teams.</p></div>
+            <div class="tile"><div class="tile__icon">🔎</div><h3>Research</h3><p>Explaining topics, surfacing angles, and (with web tools) gathering current sources.</p></div>
+            <div class="tile"><div class="tile__icon">📊</div><h3>Analysis</h3><p>Spotting themes in text, drafting first-pass analysis of data and documents.</p></div>
+            <div class="tile"><div class="tile__icon">🌍</div><h3>Translation</h3><p>Fast, fluent translation and localisation across many languages.</p></div>
+            <div class="tile"><div class="tile__icon">🎙️</div><h3>Voice</h3><p>Transcribing speech, reading text aloud, and holding spoken conversations.</p></div>
+          </div>
+          <div class="callout callout--info">
+            <p class="callout__title">ℹ️ A useful rule of thumb</p>
+            <p>AI is strongest as a <em>first-draft engine</em> and a <em>thinking partner</em> — getting you from a blank page to something you can react to. It's weakest as a <em>final authority</em>. The value is in the acceleration, not in blind trust.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 5. LIMITATIONS ---------- -->
+      <section class="section" data-title="Limitations" data-nav="Limitations">
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> Topic 5 · Most important</span>
+          <h1>Limitations &amp; risks</h1>
+          <p class="lede">If you remember one topic from this course, make it this one.</p>
+          <div class="meta-row"><span>⏱️ ~9 min</span><span>🧩 Includes a self-check</span></div>
+          <hr class="rule" />
+
+          <div class="grid grid--2">
+            <div class="tile"><div class="tile__icon">⚖️</div><h3>Bias</h3><p>Models learn from human writing, so they absorb and can amplify its biases — around gender, race, culture and more.</p></div>
+            <div class="tile"><div class="tile__icon">🌀</div><h3>Hallucinations</h3><p>Confident, fluent output that is simply untrue. The more specialist the topic, the higher the risk.</p></div>
+            <div class="tile"><div class="tile__icon">📚</div><h3>Fabricated references</h3><p>AI routinely invents realistic-looking citations, authors and DOIs that don't exist. Always verify sources.</p></div>
+            <div class="tile"><div class="tile__icon">🕰️</div><h3>Outdated knowledge</h3><p>A model's training has a cut-off date. Without live web access it won't know recent events or the latest policy.</p></div>
+            <div class="tile"><div class="tile__icon">🎭</div><h3>False confidence</h3><p>It rarely says “I don't know”. Wrong answers sound exactly as assured as correct ones.</p></div>
+            <div class="tile"><div class="tile__icon">🔒</div><h3>Privacy</h3><p>Anything you paste in may be stored or used to train future models. Never enter personal or confidential data into public tools.</p></div>
+            <div class="tile"><div class="tile__icon">©️</div><h3>Copyright</h3><p>Training data and generated output raise unresolved copyright and ownership questions. Don't assume outputs are free to reuse.</p></div>
+            <div class="tile"><div class="tile__icon">🌱</div><h3>Environmental impact</h3><p>Training and running large models consumes significant energy and water. Thoughtful use matters.</p></div>
+          </div>
+
+          <div class="callout callout--warn">
+            <p class="callout__title">⚠️ The most common serious mistake</p>
+            <p>Trusting fluent output because it <em>sounds</em> authoritative. AI's confidence is not evidence. Treat every factual claim, number, and reference as unverified until you've checked it yourself.</p>
+          </div>
+
+          <div class="callout callout--danger" style="border-left-color:var(--danger);background:var(--danger-tint)">
+            <p class="callout__title">🚫 Never do this</p>
+            <p>Never paste student data, staff data, unpublished research, personal information, or anything confidential into a public AI tool. If in doubt, leave it out — and check SETU's guidance in Topic 7.</p>
+          </div>
+
+          <!-- Self-check -->
+          <div class="quiz" data-quiz data-answer="b">
+            <p class="quiz__q">Self-check: An AI tool gives you a journal reference that looks perfect for your report — right authors, plausible title, a real-looking DOI. What should you do?</p>
+            <div class="opt"><input type="radio" name="q-limits" id="q1a" value="a"><label for="q1a"><span class="dot"></span> Cite it — the detail shows it's genuine.</label></div>
+            <div class="opt"><input type="radio" name="q-limits" id="q1b" value="b"><label for="q1b"><span class="dot"></span> Verify it exists in a library or database before using it — AI fabricates convincing references.</label></div>
+            <div class="opt"><input type="radio" name="q-limits" id="q1c" value="c"><label for="q1c"><span class="dot"></span> Ask the AI “are you sure?” and trust its answer.</label></div>
+            <div class="quiz__feedback" data-feedback>
+              <strong>Correct — always verify.</strong> Fabricated references are one of the most common and damaging AI errors. A real-looking DOI proves nothing; check it in a trusted database. (Asking the model “are you sure?” is not a reliable check — it may confidently defend a made-up source.)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 6. RESPONSIBLE AI ---------- -->
+      <section class="section" data-title="Responsible AI" data-nav="Responsible AI">
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> Topic 6</span>
+          <h1>Responsible AI</h1>
+          <p class="lede">The principles that turn “can we?” into “should we, and how?”</p>
+          <div class="meta-row"><span>⏱️ ~6 min</span><span>📖 Read</span></div>
+          <hr class="rule" />
+
+          <div class="placeholder">
+            <span class="placeholder__flag">SETU content to insert</span>
+            <p><strong>SETU AI Position Statement.</strong> Paste the official Position Statement here (or a short summary with a link to the full document). This should set out SETU's overall stance on the use of Generative AI across teaching, research and professional services.</p>
+          </div>
+
+          <div class="placeholder">
+            <span class="placeholder__flag">SETU content to insert</span>
+            <p><strong>SETU AI Principles.</strong> List the official AI Principles here. The four themes below are common across the sector and are provided as a starting scaffold — replace them with SETU's actual principles.</p>
+          </div>
+
+          <h2>Four ideas that underpin responsible use</h2>
+          <div class="grid grid--2">
+            <div class="tile"><div class="tile__icon">🧑‍⚖️</div><h3>Human oversight</h3><p>A person stays accountable for every decision and output. AI advises; humans decide and sign off.</p></div>
+            <div class="tile"><div class="tile__icon">🔍</div><h3>Transparency</h3><p>Be open about when and how AI was used, especially in teaching, assessment and research.</p></div>
+            <div class="tile"><div class="tile__icon">🎓</div><h3>Academic integrity</h3><p>Use that respects assessment rules and gives proper credit — never passing AI work off as unaided.</p></div>
+            <div class="tile"><div class="tile__icon">🧠</div><h3>Critical thinking</h3><p>AI should sharpen your judgement, not replace it. Question, verify, and think for yourself.</p></div>
+          </div>
+
+          <div class="callout callout--setu">
+            <span class="tag">SETU</span>
+            <p class="callout__title" style="margin-top:8px">Responsibility stays with you</p>
+            <p>Whatever a tool produces, the professional judgement — and the accountability — remain human. That principle sits behind everything in SETU's guidance.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 7. AI AT SETU ---------- -->
+      <section class="section" data-title="AI at SETU" data-nav="AI at SETU">
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> Topic 7</span>
+          <h1>AI at SETU</h1>
+          <p class="lede">Where the guidance, people, and support actually live.</p>
+          <div class="meta-row"><span>⏱️ ~6 min</span><span>📖 Read</span></div>
+          <hr class="rule" />
+
+          <div class="placeholder">
+            <span class="placeholder__flag">SETU content to insert</span>
+            <p>The cards below are a scaffold. Replace each description — and add real links — with SETU's actual governance details, named groups, and current documents.</p>
+          </div>
+
+          <div class="grid grid--2">
+            <div class="tile"><div class="tile__icon">🏛️</div><h3>Governance</h3><p>[SETU to confirm] The committee(s) and reporting lines that oversee AI use and policy across the university.</p></div>
+            <div class="tile"><div class="tile__icon">👥</div><h3>Working groups</h3><p>[SETU to confirm] The staff/student working group(s) shaping practice and guidance — and how to get involved.</p></div>
+            <div class="tile"><div class="tile__icon">📄</div><h3>Guidelines</h3><p>[SETU to confirm] Practical do's and don'ts for staff, with a link to the current guidance document.</p></div>
+            <div class="tile"><div class="tile__icon">📝</div><h3>Assessment framework</h3><p>[SETU to confirm] How AI is treated in assessment design and academic integrity, with a link.</p></div>
+            <div class="tile"><div class="tile__icon">🛟</div><h3>Support</h3><p>[SETU to confirm] Who to contact, training on offer, and the approved/supported tools for staff.</p></div>
+            <div class="tile"><div class="tile__icon">📚</div><h3>Policies</h3><p>[SETU to confirm] Relevant policies — data protection, IP, academic integrity — and where to read them.</p></div>
+          </div>
+
+          <div class="callout callout--setu">
+            <span class="tag">SETU</span>
+            <p class="callout__title" style="margin-top:8px">Where to go next</p>
+            <p>[SETU to confirm — add the single best “start here” link, e.g. the AI hub/intranet page, plus a contact email for questions.]</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 8. PROMPTING BASICS ---------- -->
+      <section class="section" data-title="Prompting basics" data-nav="Prompting basics">
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> Topic 8</span>
+          <h1>Prompting basics</h1>
+          <p class="lede">Not “prompt engineering” — just a simple, repeatable habit.</p>
+          <div class="meta-row"><span>⏱️ ~6 min</span><span>📖 Read</span></div>
+          <hr class="rule" />
+          <p>You don't need special tricks or magic phrases. Getting good results is mostly a loop of four plain-English steps — with your own judgement wrapped around all of it.</p>
+
+          <div class="grid grid--2">
+            <div class="tile"><div class="tile__icon">1️⃣</div><h3>Ask</h3><p>Give clear context: who it's for, what you want, how long, what tone. Specifics beat cleverness.</p></div>
+            <div class="tile"><div class="tile__icon">2️⃣</div><h3>Refine</h3><p>Treat the first reply as a draft. Tell it what to change — “shorter”, “more formal”, “add an example”.</p></div>
+            <div class="tile"><div class="tile__icon">3️⃣</div><h3>Review</h3><p>Check it for accuracy, tone, and anything invented. Verify every fact and reference.</p></div>
+            <div class="tile"><div class="tile__icon">4️⃣</div><h3>Reflect</h3><p>Is this actually better than doing it yourself? Is it appropriate to use AI here at all?</p></div>
+          </div>
+
+          <h2>A weak prompt vs a good one</h2>
+          <div class="callout" style="border-left-color:var(--danger)">
+            <p class="callout__title">🚫 Weak</p>
+            <p>“Write about assessment.”</p>
+          </div>
+          <div class="callout callout--key">
+            <p class="callout__title">✅ Better</p>
+            <p>“Draft a 150-word, friendly email to first-year students explaining how our assessment deadlines work this semester. Plain English, no jargon, encouraging tone.”</p>
+          </div>
+
+          <div class="callout callout--warn">
+            <p class="callout__title">⚠️ The non-negotiable</p>
+            <p>Always keep human judgement in the loop. The four steps produce a draft; <strong>you</strong> decide whether it's accurate, appropriate, and fit to use.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 9. REFLECTION ---------- -->
+      <section class="section" data-title="Reflection" data-nav="Reflection">
+        <div class="section__card">
+          <span class="eyebrow"><span class="dot"></span> Topic 9</span>
+          <h1>Reflection</h1>
+          <p class="lede">A couple of minutes to make it your own.</p>
+          <div class="meta-row"><span>⏱️ ~4 min</span><span>✏️ Write</span></div>
+          <hr class="rule" />
+          <p>The most useful thing you can do now is connect this to your actual role. There are no right answers — this is for you. Your notes are saved on this device only, and you can download them to keep.</p>
+
+          <div class="reflect">
+            <h3>What <strong>opportunities</strong> do you see for AI in your own role?</h3>
+            <textarea id="reflect1" data-reflect="opp" placeholder="e.g. drafting routine emails, summarising long documents, brainstorming ideas…"></textarea>
+
+            <h3>What <strong>challenges or concerns</strong> do you have?</h3>
+            <textarea id="reflect2" data-reflect="challenge" placeholder="e.g. accuracy, privacy of student data, academic integrity, time to learn…"></textarea>
+
+            <h3>One thing you'll <strong>try</strong> — or stop doing — as a result of this module:</h3>
+            <textarea id="reflect3" data-reflect="action" placeholder="One small, concrete step…"></textarea>
+
+            <div class="reflect__saved" id="reflectSaved"></div>
+            <div class="btn-row">
+              <button class="btn btn--ghost" id="reflectDownload">⬇ Download my notes</button>
+              <button class="btn btn--ghost" id="reflectClear">Clear</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 10. COMPLETE ---------- -->
+      <section class="section" data-title="You're done" data-nav="Finish">
+        <div class="section__card center">
+          <div class="done-badge">✓</div>
+          <span class="eyebrow" style="justify-content:center"><span class="dot"></span> Module 1 complete</span>
+          <h1>Nice work.</h1>
+          <p class="lede">You've completed <strong>AI Literacy</strong>, the foundation for SETU's GenAI programme.</p>
+          <hr class="rule" />
+          <div style="text-align:left">
+            <h2>The five things worth keeping</h2>
+            <ul>
+              <li><strong>AI is prediction, not knowledge</strong> — a very good autocomplete.</li>
+              <li><strong>It can be confidently wrong</strong> — verify every fact and reference.</li>
+              <li><strong>Protect data</strong> — never put confidential or personal information into public tools.</li>
+              <li><strong>Stay accountable</strong> — AI advises; you decide and sign off.</li>
+              <li><strong>Follow SETU's guidance</strong> — check Topic 7 whenever you're unsure.</li>
+            </ul>
+          </div>
+          <div class="callout callout--info" style="text-align:left">
+            <p class="callout__title">➡️ What's next</p>
+            <p>This is Course 1 of 3 in the SETU GenAI programme. [SETU to confirm: add the name of Module 2 and a link/enrolment note here.]</p>
+          </div>
+          <div class="btn-row" style="justify-content:center">
+            <button class="btn btn--ghost" data-goto="0">↩ Back to the start</button>
+            <button class="btn btn--primary" onclick="window.print()">🖨 Print / save as PDF</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===================== PAGER ===================== -->
+  <div class="pager">
+    <div class="pager__inner">
+      <button class="btn btn--ghost" id="prevBtn">← Previous</button>
+      <div class="pager__spacer"></div>
+      <span class="pager__count" id="pagerCount"></span>
+      <div class="pager__spacer"></div>
+      <button class="btn btn--primary" id="nextBtn">Next →</button>
+    </div>
+  </div>
+
+  <script src="assets/js/course.js"></script>
+</body>
+</html>
