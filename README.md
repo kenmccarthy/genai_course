@@ -14,20 +14,47 @@ and no dependencies**. It runs by opening a file in a browser and can be hosted 
 package).
 
 ```
-index.html            The whole course (all 9 topics + cover + completion)
-assets/css/styles.css  Design system (SETU brand tokens at the top)
-assets/js/course.js    Navigation, progress, activities, reflection
-assets/img/            (place a logo here — see below)
-docs/CONTENT-TODO.md   Checklist of SETU-specific content still to insert
+index.html             The whole course (9 sections + cover + completion)
+assets/css/styles.css   Design system (SETU brand tokens at the top)
+assets/js/course.js     Navigation, progress, activities, reflection
+assets/fonts/           Self-hosted DM Sans + Inter (brand fonts) + fonts.css
+assets/img/             SETU logo assets (light/dark) + favicon
+docs/CONTENT-TODO.md    Checklist of SETU-specific content still to insert
 ```
+
+## Branding
+
+Built to the **SETU Brand Guidelines (v1, May 2022)**:
+- **Colour** — Slate Grey `#435465` primary with the secondary accent palette
+  (Sea Green, Barrow Blue, Sunset Red, Sunrise Yellow) for interactive and semantic
+  states. All tokens live at the top of `assets/css/styles.css`.
+- **Typography** — DM Sans (headings) and Inter (body), self-hosted in `assets/fonts/`
+  so the course is fully self-contained and works offline.
+- **Logo** — master logo in the top bar (with a white variant that swaps in for dark
+  mode) and on the cover; the crest symbol as the favicon. Assets were extracted from
+  the brand-guidelines PDF; official SVG/EPS files can replace them later.
+
+## Sections
+
+Welcome · Understanding AI · How AI Works · Strengths & Limitations ·
+Responsible AI at SETU · AI at SETU · Working Effectively with AI ·
+AI in Practice · Reflection — plus a cover and a completion screen. Content is
+drawn from the detailed course script.
 
 ## Features
 
 - **Progress bar** that remembers the furthest point reached (saved in the browser).
-- **Contents panel** for jumping between topics; collapses to a drawer on mobile.
-- **Interactive activity** — "Which of these are AI?" with reveal-and-explain feedback.
-- **Animation** — a next-token predictor showing how an LLM builds a sentence.
-- **Self-check questions** with instant, explained feedback (no pass/fail gate).
+- **Contents panel** for jumping between sections; collapses to a drawer on mobile.
+- **Interactive activities**, each drawn from the script:
+  - "Which of these use AI?" — select-and-reveal with explanations.
+  - Next-token predictor **animation** + "complete the sentence" demo.
+  - "Spot the hallucination" self-check with explained feedback.
+  - "AI or Human?" task spectrum with discussion notes.
+  - "Would you trust this?" — click the flags in an AI answer (factual error,
+    fabricated reference, biased statement).
+  - "Think like a professional" reveal checklist.
+  - Role **pathway** tabs (Teaching, Assessment, Research, Professional Services,
+    Leadership, Accessibility) with case studies.
 - **Reflection exercise** — autosaved locally, downloadable as a text file.
 - Accessible (keyboard nav, skip link, focus states, reduced-motion support),
   responsive, light/dark aware, and printable to PDF.
@@ -42,22 +69,21 @@ python3 -m http.server 8000    # then visit http://localhost:8000
 
 ## Before it goes live — SETU to complete
 
-This build ships with **clearly-marked placeholders** for content only SETU can confirm.
-Search the project for `SETU to confirm`, `placeholder__flag`, and see
-**`docs/CONTENT-TODO.md`** for the full checklist. In short:
+The narrated content is in place from the script. A few **SETU-specific pieces** remain
+as clearly-marked placeholders. Search the project for `SETU to confirm` /
+`placeholder__flag`, and see **`docs/CONTENT-TODO.md`** for the full checklist. In short:
 
-1. **Topic 6 – Responsible AI:** paste the official Position Statement and AI Principles.
-2. **Topic 7 – AI at SETU:** real governance, working groups, guidelines, assessment
-   framework, support contacts and policy links.
-3. **Completion screen:** name of Module 2 and how to enrol.
-4. **Branding:** drop the SETU logo into `assets/img/` and swap the `.brand-mark`
-   in `index.html`; set official brand colours in the `:root` tokens at the top of
-   `assets/css/styles.css`.
+1. **Responsible AI at SETU:** links to the Position Statement and AI Principles.
+2. **AI at SETU:** the governance-structure graphic, resource links, and the hub link + contact.
+3. **Completion screen:** the name of Module 2 (AI Competency) and how to enrol.
+4. **Logos (optional):** swap the extracted PNGs for official SVG/EPS vector files for print.
 
 ## Branding tokens
 
 All colours live as CSS variables at the top of `assets/css/styles.css`
-(`--brand`, `--accent`, tints, etc.). Change them there once and the whole course updates.
+(`--brand` = Slate Grey, `--accent` = Sea Green, secondary palette, tints, etc.).
+Change them there once and the whole course updates. Fonts are defined in
+`assets/fonts/fonts.css`.
 
 ## Notes
 

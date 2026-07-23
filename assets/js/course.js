@@ -295,13 +295,13 @@
         "SETU GenAI — Module 1: AI Literacy",
         "My reflection · " + new Date().toLocaleString(),
         "",
-        "Opportunities I see for AI in my role:",
+        "Opportunities I see in my role:",
         reflections.opp || "(not answered)",
         "",
-        "Challenges or concerns I have:",
+        "Challenges and concerns:",
         reflections.challenge || "(not answered)",
         "",
-        "One thing I'll try or stop doing:",
+        "One small action I'll take over the next month:",
         reflections.action || "(not answered)",
         ""
       ];
@@ -321,6 +321,83 @@
       if (savedLabel) savedLabel.textContent = "Cleared.";
     });
   })();
+
+  // ====================================================================
+  // Simple reveal buttons (data-sentence-reveal, data-reveal-simple)
+  // ====================================================================
+  document.querySelectorAll("[data-sentence-demo]").forEach(function (demo) {
+    var btn = demo.querySelector("[data-sentence-reveal]");
+    var res = demo.querySelector("[data-sentence-result]");
+    if (btn && res) btn.addEventListener("click", function () {
+      res.hidden = false; btn.disabled = true;
+    });
+  });
+  document.querySelectorAll("[data-reveal-simple]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var el = document.getElementById(btn.getAttribute("data-reveal-simple"));
+      if (el) { el.hidden = false; btn.disabled = true; }
+    });
+  });
+
+  // ====================================================================
+  // Spectrum activity (AI or Human?)
+  // ====================================================================
+  document.querySelectorAll("[data-spectrum] .srow").forEach(function (row) {
+    var note = row.querySelector(".srow__note");
+    var opts = Array.prototype.slice.call(row.querySelectorAll(".srow__opts button"));
+    opts.forEach(function (b) {
+      b.addEventListener("click", function () {
+        opts.forEach(function (o) { o.setAttribute("aria-pressed", "false"); });
+        b.setAttribute("aria-pressed", "true");
+        if (note) { note.textContent = row.getAttribute("data-note"); note.classList.add("show"); }
+      });
+    });
+  });
+
+  // ====================================================================
+  // Trust-check activity (Would you trust this?)
+  // ====================================================================
+  document.querySelectorAll("[data-trust]").forEach(function (trust) {
+    var flags = Array.prototype.slice.call(trust.querySelectorAll(".flag"));
+    var tally = trust.querySelector("#trust-tally") || trust.querySelector(".trust__tally");
+    var revealBtn = trust.querySelector("[data-trust-reveal]");
+    var box = trust.querySelector("[data-trust-reveal-box]");
+    function count() {
+      var n = trust.querySelectorAll(".flag.found").length;
+      if (tally) tally.textContent = "Found " + n + " of " + flags.length + ".";
+    }
+    flags.forEach(function (f) {
+      f.setAttribute("role", "button");
+      f.setAttribute("tabindex", "0");
+      function toggle() { f.classList.toggle("found"); count(); }
+      f.addEventListener("click", toggle);
+      f.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+      });
+    });
+    if (revealBtn && box) revealBtn.addEventListener("click", function () {
+      flags.forEach(function (f) { f.classList.add("found"); });
+      count();
+      box.classList.add("show");
+      revealBtn.disabled = true;
+    });
+  });
+
+  // ====================================================================
+  // Role pathway tabs (AI in Practice)
+  // ====================================================================
+  document.querySelectorAll("[data-pathway]").forEach(function (pw) {
+    var tabs = Array.prototype.slice.call(pw.querySelectorAll(".ptab"));
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) { t.setAttribute("aria-selected", "false"); });
+        tab.setAttribute("aria-selected", "true");
+        pw.querySelectorAll(".ppanel").forEach(function (p) { p.classList.remove("is-active"); });
+        var panel = document.getElementById(tab.getAttribute("data-panel"));
+        if (panel) panel.classList.add("is-active");
+      });
+    });
+  });
 
   // ---- Init -----------------------------------------------------------
   go(0);
