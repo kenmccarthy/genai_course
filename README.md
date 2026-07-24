@@ -13,11 +13,27 @@ and no dependencies**. It runs by opening a file in a browser and can be hosted 
 (GitHub Pages, the SETU web server, an intranet folder, or an LMS as an embedded/uploaded
 package).
 
+## Two ways to distribute — one source
+
+The same `index.html` + `assets/` power **both**:
+
+1. **Standalone website** — host the folder anywhere (GitHub Pages, the SETU web
+   server, an intranet). Nothing to build.
+2. **SCORM package for your LMS** — run `python3 scorm/build_scorm.py` to produce
+   `dist/setu-ai-literacy-scorm-1.2.zip`, then upload it to Moodle/Brightspace/etc.
+   The LMS tracks progress, resume position and completion. See **`scorm/README.md`**.
+
+The SCORM adapter (`assets/js/scorm.js`) is inert without an LMS, so the website version
+is unaffected and the two never diverge.
+
 ```
 index.html             The whole course (9 sections + cover + completion)
 assets/css/styles.css   Design system (SETU brand tokens at the top)
 assets/js/course.js     Navigation, progress, activities, reflection
+assets/js/scorm.js      SCORM 1.2 adapter (no-op outside an LMS)
 assets/fonts/           Self-hosted DM Sans + Inter (brand fonts) + fonts.css
+scorm/                  Build script + packaging docs
+dist/                   Built SCORM .zip (regenerate with the build script)
 assets/img/             SETU logo assets (light/dark) + favicon
 docs/CONTENT-TODO.md    Checklist of SETU-specific content still to insert
 ```
@@ -87,7 +103,8 @@ Change them there once and the whole course updates. Fonts are defined in
 
 ## Notes
 
-- Progress and reflections are stored in the visitor's own browser (`localStorage`),
-  not on any server — nothing personal leaves the device. If SETU needs completion
-  tracking for records, that would come from hosting inside the LMS (a possible future
-  step; see the delivery-format options discussed at kickoff).
+- In the **website** version, progress and reflections are stored in the visitor's own
+  browser (`localStorage`) — nothing personal leaves the device.
+- In the **SCORM/LMS** version, completion, progress and resume position are reported to
+  the LMS for record-keeping (reflection notes still stay on the device). Rebuild the
+  package with `python3 scorm/build_scorm.py` after any content edit.

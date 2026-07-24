@@ -25,6 +25,7 @@
   var state = loadState();
   var furthest = state.furthest || 0;      // furthest section index reached
   var reflections = state.reflections || {};
+  var scorm = window.SCORM || null;        // SCORM adapter (no-op if not in an LMS)
 
   // ---- Build the table of contents -----------------------------------
   var tocList = document.getElementById("tocList");
@@ -78,6 +79,15 @@
     pagerCount.textContent = "Section " + (i + 1) + " of " + total;
 
     updateProgress();
+
+    // Report to the LMS (no-op when running as plain HTML)
+    if (scorm) {
+      var pct = Math.round((furthest / (total - 1)) * 100);
+      scorm.setProgress(pct);
+      scorm.setLocation(current);
+      if (furthest >= total - 1) scorm.complete();
+    }
+
     document.getElementById("main").scrollIntoView({ block: "start" });
     window.scrollTo(0, 0);
   }
@@ -400,6 +410,15 @@
   });
 
   // ---- Init -----------------------------------------------------------
-  go(0);
+  var startAt = 0;
+  if (scorm && scorm.init()) {
+    // Inside an LMS: resume to the last-viewed section if recorded.
+    var loc = scorm.getLocation();
+    if (loc !== null && loc >= 0 && loc < total) {
+      furthest = Math.max(furthest, loc);
+      startAt = loc;
+    }
+  }
+  go(startAt);
   updateProgress();
 })();
