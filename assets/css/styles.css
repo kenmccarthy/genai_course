@@ -508,6 +508,131 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
   .toc-backdrop.is-open { display: block; }
 }
 
+/* ---------------- Key message / takeaway callout ---------------- */
+/* Deliberately distinct from --key (green) and --setu, so it never clashes
+   with an adjacent box. Used consistently for every section's key message. */
+.callout--takeaway {
+  border: 1px solid color-mix(in srgb, var(--brand) 22%, var(--border));
+  border-left: 5px solid var(--sunrise-yellow);
+  background: var(--brand-tint);
+}
+.callout--takeaway .callout__title { color: var(--brand-strong); }
+.km-pill {
+  display: inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--brand-strong);
+  background: var(--sunrise-yellow); padding: 2px 8px; border-radius: 99px; margin-right: 8px;
+}
+.callout--takeaway ul { margin: 6px 0 0; }
+.callout--takeaway li { font-size: 15px; }
+
+/* ---------------- Flip cards ---------------- */
+.flip-card { perspective: 1000px; cursor: pointer; }
+.flip-card__inner {
+  display: grid; transition: transform .5s ease; transform-style: preserve-3d;
+}
+.flip-card[aria-expanded="true"] .flip-card__inner { transform: rotateY(180deg); }
+.flip-card__front, .flip-card__back {
+  grid-area: 1 / 1;                      /* stack faces; container sizes to the taller */
+  -webkit-backface-visibility: hidden; backface-visibility: hidden;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 16px; box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column;
+}
+.flip-card__front { background: var(--surface); }
+.flip-card__back  { background: var(--brand-tint); transform: rotateY(180deg); }
+.flip-card__icon { font-size: 24px; margin-bottom: 8px; }
+.flip-card__front h3 { margin: 0; font-size: 15px; }
+.flip-card__front .flip-hint {
+  margin-top: auto; padding-top: 10px; font-size: 12px; color: var(--text-mute);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.flip-card__back h3 { margin: 0 0 4px; font-size: 15px; color: var(--brand-strong); }
+.flip-card__back p { margin: 0; font-size: 14px; color: var(--text-soft); }
+.flip-card:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: var(--radius-sm); }
+
+/* ---------------- Figure / image slot ---------------- */
+.figure { margin: 22px 0; }
+.figure img { width: 100%; height: auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.figure__slot {
+  border: 1px dashed color-mix(in srgb, var(--brand) 40%, var(--border));
+  background: repeating-linear-gradient(-45deg, transparent, transparent 12px,
+              color-mix(in srgb, var(--brand-tint) 55%, transparent) 12px,
+              color-mix(in srgb, var(--brand-tint) 55%, transparent) 24px);
+  border-radius: var(--radius-sm); aspect-ratio: 16 / 9;
+  display: grid; place-content: center; place-items: center; gap: 6px; text-align: center;
+  color: var(--text-mute); padding: 20px;
+}
+.figure--banner .figure__slot { aspect-ratio: 3 / 1; }
+.figure--wide  .figure__slot { aspect-ratio: 21 / 9; }
+.figure__slot .placeholder__flag { margin: 0; }
+.figure__slot small { font-size: 12.5px; max-width: 46ch; }
+.figure figcaption { font-size: 13px; color: var(--text-mute); margin-top: 8px; text-align: center; }
+
+/* ---------------- Video embed (YouTube) ---------------- */
+.video { margin: 22px 0; }
+.video__frame {
+  position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-sm);
+  overflow: hidden; border: 1px solid var(--border); background: #000;
+}
+.video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video__slot {
+  position: absolute; inset: 0; display: grid; place-content: center; gap: 8px;
+  text-align: center; color: #fff; padding: 20px;
+  background: linear-gradient(135deg, #2c3742, var(--brand) 60%, var(--sea-green));
+}
+.video__slot .placeholder__flag { margin: 0 auto; }
+.video figcaption { font-size: 13.5px; margin-top: 8px; }
+.video figcaption a { color: var(--info); font-weight: 600; }
+
+/* ---------------- Certificate ---------------- */
+.certgen {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface-2); padding: 20px; margin: 22px 0; text-align: left;
+}
+.certgen h3 { margin: 0 0 6px; }
+.certgen__row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+.certgen input[type="text"] {
+  flex: 1 1 220px; min-width: 0; font-family: var(--font); font-size: 15.5px;
+  padding: 11px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--surface); color: var(--text);
+}
+.certgen input:focus-visible { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+.certgen__hint { font-size: 13px; color: var(--text-mute); margin-top: 8px; }
+
+/* The certificate document itself (screen preview + print). */
+.certificate {
+  display: none;
+  background: #fff; color: #1c2430;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: clamp(24px, 5vw, 56px); margin: 18px 0 0; box-shadow: var(--shadow);
+  text-align: center;
+}
+.certificate.is-preview { display: block; }
+.certificate__border {
+  border: 3px double var(--brand); border-radius: 8px;
+  padding: clamp(20px, 4vw, 40px);
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--sea-green) 10%, transparent), transparent 40%),
+    radial-gradient(circle at 0 100%, color-mix(in srgb, var(--brand) 8%, transparent), transparent 40%);
+}
+.certificate__logo { height: 54px; width: auto; margin: 0 auto 18px; display: block; }
+.certificate__kicker {
+  font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--sea-green); font-weight: 700;
+}
+.certificate h2 {
+  font-family: var(--font-head); font-weight: 700; font-size: clamp(24px, 4vw, 34px);
+  color: var(--brand-strong); margin: 6px 0 18px;
+}
+.certificate__lead { font-size: 15px; color: #4a5568; margin: 0 0 6px; }
+.certificate__name {
+  font-family: var(--font-head); font-weight: 700; font-size: clamp(26px, 5vw, 38px);
+  color: var(--brand); margin: 8px 0; border-bottom: 2px solid color-mix(in srgb, var(--brand) 30%, transparent);
+  display: inline-block; padding: 0 24px 6px;
+}
+.certificate__course { font-size: 18px; font-weight: 600; margin: 14px 0 6px; color: #1c2430; }
+.certificate__meta { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 26px; font-size: 13px; color: #4a5568; }
+.certificate__meta b { display: block; font-size: 15px; color: #1c2430; }
+
 /* ---------------- Focus visibility ---------------- */
 a:focus-visible, button:focus-visible, .chip:focus-visible {
   outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 6px;
@@ -523,4 +648,17 @@ a:focus-visible, button:focus-visible, .chip:focus-visible {
   .topbar, .pager, .toc, .menu-btn { display: none !important; }
   .section { display: block !important; }
   .section__card { box-shadow: none; border: none; max-width: none; page-break-after: always; }
+  /* Flip cards: show both faces stacked so nothing is hidden on paper. */
+  .flip-card__inner { transform: none !important; display: block !important; }
+  .flip-card__front, .flip-card__back {
+    -webkit-backface-visibility: visible !important; backface-visibility: visible !important;
+    transform: none !important; grid-area: auto !important; margin-bottom: 6px;
+  }
+  /* Certificate-only print mode (triggered from the certificate download button). */
+  body.printing-cert .layout,
+  body.printing-cert .topbar,
+  body.printing-cert .pager { display: none !important; }
+  body.printing-cert .certificate { display: block !important; box-shadow: none; border: none; }
+  body.printing-cert { background: #fff; }
 }
+@page { margin: 14mm; }

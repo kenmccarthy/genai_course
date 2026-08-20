@@ -29,8 +29,9 @@ is unaffected and the two never diverge.
 ```
 index.html             The whole course (9 sections + cover + completion)
 assets/css/styles.css   Design system (SETU brand tokens at the top)
-assets/js/course.js     Navigation, progress, activities, reflection
+assets/js/course.js     Navigation, progress, activities, flip cards, reflection
 assets/js/scorm.js      SCORM 1.2 adapter (no-op outside an LMS)
+assets/js/certificate.js Learner-generated certificate of completion
 assets/fonts/           Self-hosted DM Sans + Inter (brand fonts) + fonts.css
 scorm/                  Build script + packaging docs
 dist/                   Built SCORM .zip (regenerate with the build script)
@@ -71,7 +72,11 @@ drawn from the detailed course script.
   - "Think like a professional" reveal checklist.
   - Role **pathway** tabs (Teaching, Assessment, Research, Professional Services,
     Leadership, Accessibility) with case studies.
+  - Flip cards (tap/click/keyboard) for capabilities and the AI Principles.
+  - A scenario, an "improve this prompt" check, and interactive case-study reveals.
 - **Reflection exercise** — autosaved locally, downloadable as a text file.
+- **Certificate of completion** — the learner enters their name and downloads a branded
+  certificate (print / save as PDF); the LMS also records completion via SCORM.
 - Accessible (keyboard nav, skip link, focus states, reduced-motion support),
   responsive, light/dark aware, and printable to PDF.
 

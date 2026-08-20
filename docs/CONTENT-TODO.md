@@ -1,45 +1,76 @@
 # Content to insert before go-live — SETU checklist
 
-The course content now comes from the detailed script. The items below are the
-remaining SETU-specific pieces, marked in the course with a dashed
-"SETU content to insert" box or `[SETU to confirm]`. Search the codebase for
-those to find each spot.
+The course content and interactions are in place. The items below are the remaining
+SETU-specific pieces, marked in the course with a dashed "Image / Video / SETU content
+to insert" slot or `[SETU to confirm]`. Search the codebase for `placeholder__flag`,
+`figure__slot`, `video__slot`, and `SETU to confirm`.
 
-## Responsible AI at SETU (section 5)
-- [ ] **Position Statement** — add a link to the full Position Statement on Generative AI (or embed a summary + link).
-- [ ] **AI Principles** — confirm the five principles (Human-centred, Responsible, Critical, Inclusive, Innovative) match the official wording; add a link to the Principles document.
+## 1. Images (you are supplying these)
+Every slot is a `<figure class="figure">` with a dashed placeholder. To fill one,
+replace the inner `<div class="figure__slot">…</div>` with `<img src="assets/img/your-file.jpg"
+alt="…">`. Recommended: SETU photography style (shallow depth of field, natural light,
+authentic, inclusive). Suggested sizes below (all can be larger; keep the aspect ratio).
 
-## AI at SETU (section 6)
-- [ ] **AI Governance Structure graphic** — insert the official diagram (placeholder box is in place).
-- [ ] **Guidance resources** — confirm the six resource cards (Position Statement, Staff & Student Guidelines, Assessment Redesign Framework, AI Integration Framework, Exemplars & case studies, Professional development) and add links to each.
-- [ ] **AI at SETU website** — add the "start here" hub link and a contact email.
+| Section | Where | Suggested size / ratio |
+|---|---|---|
+| Welcome | Banner under the hero | 1600×540 (3:1) |
+| Understanding AI | Header (concept diagram) | 1200×675 (16:9) |
+| Understanding AI | Closing image after the activity | 1200×675 (16:9) |
+| How AI Works | Header illustration | 1200×675 (16:9) |
+| How AI Works | “When AI takes things literally” (optional) | 1200×675 (16:9) |
+| Strengths & Limitations | Header illustration | 1200×675 (16:9) |
+| Responsible AI at SETU | Header illustration | 1200×675 (16:9) |
+| AI at SETU | Header illustration | 1200×675 (16:9) |
+| Working Effectively | Header illustration | 1200×675 (16:9) |
+| AI in Practice | Header illustration | 1200×675 (16:9) |
+| Reflection | Reflective image | 1200×675 (16:9) |
 
-## Completion screen (section 10)
-- [ ] **Module 2 (AI Competency)** — add the name and enrolment link.
+## 2. Video — AI at SETU
+- [ ] **YouTube URL** for the AI Integration plan overview. In `index.html`, find
+  `data-video` in the AI at SETU section and replace the `<div class="video__slot">…</div>`
+  with the commented `<iframe …>` (the markup is already there — just add the video ID and
+  set the caption link’s `href`). Embeds inline when online; the caption link is the
+  offline/SCORM fallback.
 
-## Branding (done, but confirm)
-- [x] SETU logo wired into top bar (light + dark) and cover hero.
-- [x] Slate Grey primary + secondary accent palette applied (Brand Guidelines v1).
-- [x] DM Sans (headings) + Inter (body) self-hosted from `assets/fonts/`.
-- [ ] Optional: replace extracted PNG logos with official **SVG/EPS** vector files (better for print). Current logos were extracted from the brand-guidelines PDF.
-- [ ] Confirm brand hex values in `:root` in `assets/css/styles.css` if any differ.
+## 3. Responsible AI at SETU
+- [ ] **Position Statement** — add the link (placeholder in place).
+- [ ] **AI Principles** — confirm the five principles (Human-centred, Responsible, Critical,
+  Inclusive, Innovative) match the official wording, and **confirm the source document**
+  (the review asked whether these come from the Staff Guidelines). Add the link.
 
-## Structure note for SETU review
-- The outline table listed **Welcome** and **Why AI Matters** as separate sections; the
-  narrated script delivers them as one flowing welcome, so they are combined in
-  **section 1 (Welcome)**. If you want them split, provide the distinct "Why AI Matters"
-  copy and it can become its own section.
+## 4. AI at SETU
+- [ ] **AI Governance Structure graphic** — insert the official diagram (placeholder in place).
+- [ ] **Resource links** — add links on the six resource cards.
+- [ ] **AI at SETU website** — add the “start here” link and a contact email.
 
-## Authored-to-spec content to review
-These activities were built to fulfil the script's brief where it described an activity
-but didn't provide the exact text — please review for tone/accuracy:
-- [ ] **How AI Works → "Spot the hallucination"** — the three sample answers (fabricated citation example).
-- [ ] **Strengths & Limitations → "AI or Human?"** — the per-task discussion notes.
-- [ ] **Strengths & Limitations → "Would you trust this?"** — the sample AI passage containing a factual error, a fabricated reference, and a biased statement.
+## 5. Completion / certificate
+- [ ] **Course 2 (AI Competency)** — add the name and enrolment link (placeholder in the
+  “Where next” box).
+- [ ] **Certificate wording** (optional) — the certificate reads “SETU GenAI Programme /
+  Course 1 — AI Literacy”. If you want a signatory line (e.g. a name/title) or a QR/verify
+  note, say so and it can be added. The learner types their own name; the LMS also records
+  completion via SCORM.
 
-## Optional / general
-- [ ] AI working group to review sections 1–7 for accuracy and SETU tone.
-- [ ] Confirm the ~60-minute total and per-section time estimates after a pilot read-through.
-- [ ] Decide whether completion tracking is needed (would require LMS/SCORM hosting).
-- [ ] Accessibility sign-off against SETU's WCAG target.
-- [ ] Brand note: the course uses light emoji icons (as the script itself does for the role pathway). Confirm this is acceptable, given the Brand Guidelines advise against emojis in *official communications* — or ask and they can be swapped for line icons.
+## 6. Branding (done — confirm)
+- [x] Terminology standardised to **courses + sections** (no “module”/“stage”/“hub” as
+  structural terms).
+- [x] SETU logo, Slate Grey + secondary palette, DM Sans/Inter fonts.
+- [ ] Optional: replace the extracted PNG logos with official **SVG/EPS** vector files.
+
+## 7. Review notes (from the feedback doc — addressed, worth a final check)
+- Flip cards used for **What AI does well** and the **AI Principles** (tap/click/Enter to flip).
+- Consistent **Key message** boxes (yellow “Key message” pill) added across sections, with
+  bullet points where useful; the How AI Works key message is now a distinct colour from the
+  box above it.
+- New activities: Responsible AI **scenario**, Working Effectively **“improve this prompt”**,
+  and interactive **case-study reveals** in AI in Practice. Please review these for tone.
+- The **five key takeaways** now live in **Reflection** (moved out of “Well done”).
+- “Complete the sentence” example changed from “Fish and chips…” to “The early bird catches
+  the…”.
+
+## 8. Optional / general
+- [ ] AI working group to review all sections for accuracy and SETU tone.
+- [ ] Decide whether emoji icons are acceptable (used lightly, as the script does) or should
+  be swapped for line icons, per the Brand Guidelines note on official communications.
+- [ ] Accessibility sign-off against SETU’s WCAG target.
+- [ ] After any edit, rebuild the SCORM package: `python3 scorm/build_scorm.py`.

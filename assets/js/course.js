@@ -409,6 +409,20 @@
     });
   });
 
+  // ====================================================================
+  // Flip cards (What AI does well; AI Principles)
+  // ====================================================================
+  document.querySelectorAll(".flip-card").forEach(function (card) {
+    function toggle() {
+      var open = card.getAttribute("aria-expanded") === "true";
+      card.setAttribute("aria-expanded", open ? "false" : "true");
+    }
+    card.addEventListener("click", toggle);
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+    });
+  });
+
   // ---- Init -----------------------------------------------------------
   var startAt = 0;
   if (scorm && scorm.init()) {
