@@ -26,11 +26,11 @@ authentic, inclusive). Suggested sizes below (all can be larger; keep the aspect
 | Reflection | Reflective image | 1200×675 (16:9) |
 
 ## 2. Video — AI at SETU
-- [ ] **YouTube URL** for the AI Integration plan overview. In `index.html`, find
-  `data-video` in the AI at SETU section and replace the `<div class="video__slot">…</div>`
-  with the commented `<iframe …>` (the markup is already there — just add the video ID and
-  set the caption link’s `href`). Embeds inline when online; the caption link is the
-  offline/SCORM fallback.
+- [x] **YouTube video wired** — the AI Integration plan overview
+  (`https://youtu.be/K0J3JcAN37U`) is embedded inline (privacy-enhanced
+  `youtube-nocookie`), with a "watch on YouTube" fallback link for offline/SCORM.
+  Note: some LMS content-security policies block external iframes; the fallback link
+  covers that. To change the video, edit the `data-video` block in `index.html`.
 
 ## 3. Responsible AI at SETU
 - [ ] **Position Statement** — add the link (placeholder in place).
@@ -70,7 +70,7 @@ authentic, inclusive). Suggested sizes below (all can be larger; keep the aspect
 
 ## 8. Optional / general
 - [ ] AI working group to review all sections for accuracy and SETU tone.
-- [ ] Decide whether emoji icons are acceptable (used lightly, as the script does) or should
-  be swapped for line icons, per the Brand Guidelines note on official communications.
+- [x] Emojis replaced with a set of SVG **line icons** (brand-appropriate), per the Brand
+  Guidelines note on official communications.
 - [ ] Accessibility sign-off against SETU’s WCAG target.
 - [ ] After any edit, rebuild the SCORM package: `python3 scorm/build_scorm.py`.

@@ -508,6 +508,20 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
   .toc-backdrop.is-open { display: block; }
 }
 
+/* ---------------- Line icons (SVG sprite) ---------------- */
+.icon {
+  width: 1.05em; height: 1.05em; stroke: currentColor; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  vertical-align: -0.16em; flex: none;
+}
+.tile__icon, .flip-card__icon { color: var(--accent); line-height: 0; }
+.tile__icon .icon, .flip-card__icon .icon { width: 26px; height: 26px; stroke-width: 1.75; }
+.meta-row .icon { width: 15px; height: 15px; }
+.ptab .icon { width: 17px; height: 17px; }
+.ladder__row b { display: inline-flex; align-items: center; gap: 8px; }
+.ladder__row b .icon { width: 18px; height: 18px; color: var(--accent); }
+.btn .icon { width: 17px; height: 17px; }
+
 /* ---------------- Key message / takeaway callout ---------------- */
 /* Deliberately distinct from --key (green) and --setu, so it never clashes
    with an adjacent box. Used consistently for every section's key message. */
