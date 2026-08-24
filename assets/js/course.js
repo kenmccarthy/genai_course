@@ -109,6 +109,7 @@
   document.addEventListener("keydown", function (e) {
     var tag = (e.target.tagName || "").toLowerCase();
     if (tag === "textarea" || tag === "input") return;
+    if (isLightboxOpen()) return;
     if (e.key === "ArrowRight") go(current + 1);
     if (e.key === "ArrowLeft") go(current - 1);
   });
@@ -422,6 +423,57 @@
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
     });
   });
+
+  // ====================================================================
+  // Image lightbox — click any course image to view it enlarged
+  // ====================================================================
+  var lightbox = document.getElementById("lightbox");
+  var lightboxImg = document.getElementById("lightboxImg");
+  var lightboxCaption = document.getElementById("lightboxCaption");
+  var lightboxTrigger = null; // element to restore focus to on close
+
+  function isLightboxOpen() {
+    return !!(lightbox && !lightbox.hidden);
+  }
+
+  function openLightbox(img) {
+    if (!lightbox) return;
+    lightboxTrigger = img;
+    lightboxImg.src = img.getAttribute("src");
+    lightboxImg.alt = img.getAttribute("alt") || "";
+    var figcaption = img.closest("figure") && img.closest("figure").querySelector("figcaption");
+    lightboxCaption.textContent = figcaption ? figcaption.textContent : "";
+    lightbox.hidden = false;
+    document.body.classList.add("lightbox-open");
+    lightbox.querySelector(".lightbox__close").focus();
+  }
+
+  function closeLightbox() {
+    if (!lightbox || lightbox.hidden) return;
+    lightbox.hidden = true;
+    document.body.classList.remove("lightbox-open");
+    lightboxImg.src = "";
+    if (lightboxTrigger) { lightboxTrigger.focus(); lightboxTrigger = null; }
+  }
+
+  if (lightbox) {
+    document.querySelectorAll(".figure__img").forEach(function (img) {
+      img.setAttribute("tabindex", "0");
+      img.setAttribute("role", "button");
+      img.setAttribute("aria-label", "View larger image: " + (img.getAttribute("alt") || ""));
+      img.addEventListener("click", function () { openLightbox(img); });
+      img.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(img); }
+      });
+    });
+
+    lightbox.querySelectorAll("[data-lightbox-close]").forEach(function (el) {
+      el.addEventListener("click", closeLightbox);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && isLightboxOpen()) closeLightbox();
+    });
+  }
 
   // ---- Init -----------------------------------------------------------
   var startAt = 0;

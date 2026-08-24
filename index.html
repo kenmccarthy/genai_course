@@ -47,6 +47,7 @@
     <symbol id="i-robot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M9 17h6"/></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
     <symbol id="i-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to content</a>
@@ -547,10 +548,10 @@
           <h2>A coordinated approach</h2>
           <p>Artificial Intelligence has implications for every part of the university — teaching and assessment, research, professional services, student support, digital systems, governance and institutional strategy. No single person or department can address all of these alone. SETU has therefore established a governance structure that brings together colleagues with different expertise to ensure AI is integrated thoughtfully, ethically and strategically.</p>
 
-          <div class="placeholder">
-            <span class="placeholder__flag">SETU graphic to insert</span>
-            <p><strong>AI Governance Structure graphic.</strong> Insert the diagram of SETU's AI governance structure here (committees, working groups and reporting lines).</p>
-          </div>
+          <figure class="figure">
+            <img class="figure__img" src="assets/img/ai-governance.png" alt="AI Governance at SETU: Academic Council provides oversight and strategic direction; the Academic Lead for GenAI leads academic strategy for Generative AI, working alongside a new Operations Lead for GenAI role supporting AI operations and systems; the GenAI Steering Committee provides strategic guidance and coordination; six working groups — Research, Library, Students, Capacity Building, PMSS, and Guidelines &amp; Strategy — report into the steering committee." />
+            <figcaption>SETU's AI governance structure: a coordinated, collaborative approach to responsible AI.</figcaption>
+          </figure>
 
           <p>This structure helps to:</p>
           <ul>
@@ -967,6 +968,18 @@
         <div><span>Date</span><b id="certDate">—</b></div>
         <div><span>Programme</span><b>SETU GenAI · Course 1 of 3</b></div>
       </div>
+    </div>
+  </div>
+
+  <!-- Image lightbox — lives at body level, populated on demand -->
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close image">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      <p class="lightbox__caption" id="lightboxCaption"></p>
     </div>
   </div>
 
