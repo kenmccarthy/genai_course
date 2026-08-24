@@ -39,7 +39,7 @@ authentic, inclusive). Suggested sizes below (all can be larger; keep the aspect
   (the review asked whether these come from the Staff Guidelines). Add the link.
 
 ## 4. AI at SETU
-- [ ] **AI Governance Structure graphic** — insert the official diagram (placeholder in place).
+- [x] **AI Governance Structure graphic** — official diagram inserted (`assets/img/ai-governance.png`).
 - [ ] **Resource links** — add links on the six resource cards.
 - [ ] **AI at SETU website** — add the “start here” link and a contact email.
 

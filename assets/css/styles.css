@@ -567,6 +567,11 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
 /* ---------------- Figure / image slot ---------------- */
 .figure { margin: 22px 0; }
 .figure img { width: 100%; height: auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.figure__img {
+  cursor: zoom-in; position: relative; transition: opacity .15s ease, box-shadow .15s ease;
+}
+.figure__img:hover { box-shadow: var(--shadow); }
+.figure__img:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
 .figure__slot {
   border: 1px dashed color-mix(in srgb, var(--brand) 40%, var(--border));
   background: repeating-linear-gradient(-45deg, transparent, transparent 12px,
@@ -647,6 +652,41 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
 .certificate__meta { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 26px; font-size: 13px; color: #4a5568; }
 .certificate__meta b { display: block; font-size: 15px; color: #1c2430; }
 
+/* ---------------- Image lightbox ---------------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 120;
+  display: grid; place-items: center; padding: clamp(16px, 5vw, 56px);
+}
+.lightbox[hidden] { display: none; }
+body.lightbox-open { overflow: hidden; }
+.lightbox__backdrop {
+  position: absolute; inset: 0; background: rgba(8,12,18,.78);
+}
+.lightbox__dialog {
+  position: relative; z-index: 1; max-width: min(1100px, 100%); max-height: 100%;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.lightbox__img {
+  display: block; max-width: 100%; max-height: calc(100vh - 140px);
+  width: auto; height: auto; border-radius: var(--radius-sm);
+  box-shadow: var(--shadow); background: var(--surface);
+}
+.lightbox__caption {
+  margin: 0; max-width: 70ch; text-align: center; font-size: 14px; color: #fff;
+}
+.lightbox__caption:empty { display: none; }
+.lightbox__close {
+  position: absolute; top: -44px; right: 0; width: 36px; height: 36px;
+  display: grid; place-items: center; border-radius: 99px; border: 0;
+  background: rgba(255,255,255,.12); color: #fff; cursor: pointer;
+}
+.lightbox__close:hover { background: rgba(255,255,255,.22); }
+.lightbox__close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lightbox__close .icon { width: 20px; height: 20px; }
+@media (max-width: 640px) {
+  .lightbox__close { top: -40px; right: 0; }
+}
+
 /* ---------------- Focus visibility ---------------- */
 a:focus-visible, button:focus-visible, .chip:focus-visible {
   outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 6px;
@@ -659,7 +699,7 @@ a:focus-visible, button:focus-visible, .chip:focus-visible {
 
 /* ---------------- Print ---------------- */
 @media print {
-  .topbar, .pager, .toc, .menu-btn { display: none !important; }
+  .topbar, .pager, .toc, .menu-btn, .lightbox { display: none !important; }
   .section { display: block !important; }
   .section__card { box-shadow: none; border: none; max-width: none; page-break-after: always; }
   /* Flip cards: show both faces stacked so nothing is hidden on paper. */
