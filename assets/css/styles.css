@@ -85,6 +85,31 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ---------------- Brand motif (U symbol) ---------------- */
+/* A large, very low-opacity SETU crest sits in the page's right-hand gutter
+   on wide screens only — .layout tops out at 1120px, so this only shows once
+   there's genuinely empty background to its right (never over the TOC or
+   the content card). Purely decorative: fixed, unclickable, hidden from
+   narrower viewports and from print.
+   The box is only HALF the width of the (3x-scaled) image, anchored to its
+   left edge, so only the motif's left half ever renders — the right half is
+   simply painted outside the box and clipped. `right` is tied to .layout's
+   own edge via calc(), so there's always a fixed 40px clearance from the
+   content column at any width, rather than a hand-tuned pixel offset. */
+body::before {
+  content: ""; display: none; position: fixed; z-index: 0; pointer-events: none;
+  top: 0; right: calc((100vw - 1120px) / 2 - 400px); width: 360px; height: 897px;
+  background: url("../img/setu-symbol.png") no-repeat left top / 720px 897px;
+  opacity: .05;
+}
+@media (min-width: 1500px) { body::before { display: block; } }
+@media (prefers-color-scheme: dark) {
+  body::before { background-image: url("../img/setu-symbol-white.png"); opacity: .06; }
+}
+:root[data-theme="dark"]  body::before { background-image: url("../img/setu-symbol-white.png"); opacity: .06; }
+:root[data-theme="light"] body::before { background-image: url("../img/setu-symbol.png"); opacity: .05; }
+@media print { body::before { display: none !important; } }
+
 /* ---------------- Skip link (a11y) ---------------- */
 .skip-link {
   position: absolute; left: -999px; top: 0; z-index: 100;
@@ -469,9 +494,23 @@ hr.rule { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
 
 /* ---------------- Cover / completion ---------------- */
 .cover__hero {
+  position: relative; overflow: hidden;
   background: linear-gradient(135deg, #2c3742 0%, var(--brand) 52%, var(--sea-green) 100%);
   color: #fff; border-radius: var(--radius); padding: 40px clamp(22px, 5vw, 48px);
   box-shadow: var(--shadow); margin-bottom: 20px;
+}
+/* The SETU "U" crest, bled off the bottom-right corner — decorative, so it
+   sits behind the real content (all direct children get their own stacking
+   context) and is clipped by the hero's own border-radius via overflow:hidden. */
+.cover__hero > * { position: relative; z-index: 1; }
+.cover__hero::after {
+  content: ""; position: absolute; z-index: 0;
+  right: -70px; bottom: -90px; width: 340px; height: 424px;
+  background: url("../img/setu-symbol-white.png") no-repeat right bottom / contain;
+  opacity: .16; pointer-events: none;
+}
+@media (max-width: 640px) {
+  .cover__hero::after { width: 200px; height: 249px; right: -40px; bottom: -50px; }
 }
 .cover__hero h1 { color: #fff; }
 .cover__logo { height: 52px; width: auto; margin-bottom: 22px; display: block; }
