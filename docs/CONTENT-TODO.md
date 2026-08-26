@@ -39,13 +39,13 @@ authentic, inclusive). Suggested sizes below (all can be larger; keep the aspect
   (the review asked whether these come from the Staff Guidelines). Add the link.
 
 ## 4. AI at SETU
-- [ ] **AI Governance Structure graphic** — insert the official diagram (placeholder in place).
+- [x] **AI Governance Structure graphic** — official diagram inserted (`assets/img/ai-governance.png`).
 - [ ] **Resource links** — add links on the six resource cards.
 - [ ] **AI at SETU website** — add the “start here” link and a contact email.
 
 ## 5. Completion / certificate
-- [ ] **Course 2 (AI Competency)** — add the name and enrolment link (placeholder in the
-  “Where next” box).
+- [ ] **Course 2 (AI Competency)** — add the name and enrolment link in the
+  “Where next” box (the placeholder bracket text has been removed).
 - [ ] **Certificate wording** (optional) — the certificate reads “SETU GenAI Programme /
   Course 1 — AI Literacy”. If you want a signatory line (e.g. a name/title) or a QR/verify
   note, say so and it can be added. The learner types their own name; the LMS also records

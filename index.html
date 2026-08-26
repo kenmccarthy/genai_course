@@ -47,6 +47,7 @@
     <symbol id="i-robot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M9 17h6"/></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
     <symbol id="i-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to content</a>
@@ -154,18 +155,6 @@
             <div class="ladder__row"><b><svg class="icon"><use href="#i-robot"/></svg> AI Agents</b><span>The newest development. Unlike a chatbot answering a single question, an agent can work towards a goal across multiple connected tasks — gathering information, using different tools, making decisions along the way and adapting as new information appears. As these systems become more capable, human judgement becomes <em>more</em> important, not less: people remain responsible for setting goals, reviewing outputs and making final decisions.</span></div>
           </div>
 
-          <div class="callout callout--takeaway">
-            <p class="callout__title"><span class="km-pill">Key message</span>Bringing it all together</p>
-            <ul>
-              <li><strong>Artificial Intelligence</strong> is the broad field.</li>
-              <li><strong>Machine Learning</strong> is one approach within it.</li>
-              <li><strong>Large Language Models</strong> are a type of machine-learning model designed to work with language.</li>
-              <li><strong>Generative AI</strong> uses technologies such as LLMs to create new content.</li>
-              <li><strong>AI Agents</strong> build on these capabilities to complete more complex, multi-step tasks.</li>
-            </ul>
-            <p>You don't need to remember every definition — just recognise that these terms describe different parts of the same AI ecosystem, each with different capabilities and limitations.</p>
-          </div>
-
           <!-- Activity: Which of these use AI? -->
           <div class="activity" id="activity-ai" data-activity="which-ai">
             <div class="activity__head">
@@ -195,6 +184,18 @@
             <img class="figure__img" src="assets/img/ai-everywhere.png" alt="Collage of AI applications in everyday life" />
             <figcaption>AI is already all around us.</figcaption>
           </figure>
+
+          <div class="callout callout--takeaway">
+            <p class="callout__title"><span class="km-pill">Key message</span>Bringing it all together</p>
+            <ul>
+              <li><strong>Artificial Intelligence</strong> is the broad field.</li>
+              <li><strong>Machine Learning</strong> is one approach within it.</li>
+              <li><strong>Large Language Models</strong> are a type of machine-learning model designed to work with language.</li>
+              <li><strong>Generative AI</strong> uses technologies such as LLMs to create new content.</li>
+              <li><strong>AI Agents</strong> build on these capabilities to complete more complex, multi-step tasks.</li>
+            </ul>
+            <p>You don't need to remember every definition — just recognise that these terms describe different parts of the same AI ecosystem, each with different capabilities and limitations.</p>
+          </div>
         </div>
       </section>
 
@@ -274,7 +275,7 @@
             <p class="quiz__q"><span class="activity__badge" style="margin-right:8px">Try it</span> Spot the hallucination. Three AI answers respond to “Suggest a source on assessment design.” Which one should set off alarm bells?</p>
             <div class="opt"><input type="radio" name="q-hallu" id="h-a" value="a"><label for="h-a"><span class="dot"></span> “Assessment design is often discussed in the higher-education literature; search your library database for recent reviews.”</label></div>
             <div class="opt"><input type="radio" name="q-hallu" id="h-b" value="b"><label for="h-b"><span class="dot"></span> “I can't verify specific sources — check a trusted database such as your library catalogue or ERIC.”</label></div>
-            <div class="opt"><input type="radio" name="q-hallu" id="h-c" value="c"><label for="h-c"><span class="dot"></span> “See Murphy &amp; O'Brien (2021), <em>Journal of Assessment Futures</em>, 14(3), pp. 210–228, doi:10.1093/jaf/2021.” (precise, confident, specific)</label></div>
+            <div class="opt"><input type="radio" name="q-hallu" id="h-c" value="c"><label for="h-c"><span class="dot"></span> “See Murphy &amp; O'Brien (2021), <em>Journal of Assessment Futures</em>, 14(3), pp. 210–228, doi:10.1093/jaf/2021.”</label></div>
             <div class="quiz__feedback" data-feedback>
               <strong>The third answer is the risky one.</strong> A precise-looking citation — real-sounding authors, journal, page numbers and a DOI — is exactly what a fabricated reference looks like. Confidence and specificity are not evidence of accuracy. Always verify a reference exists in a trusted database before using it.
             </div>
@@ -297,7 +298,13 @@
 
           <div class="callout callout--takeaway">
             <p class="callout__title"><span class="km-pill">Key message</span>The bottom line</p>
-            <p>Generative AI doesn't think, understand or know things the way people do. It predicts patterns in language remarkably well, which lets it produce useful, creative and often impressive responses. The better we understand its strengths and limitations, the better equipped we are to use it responsibly — and the next question is the most important one: when should we use it, and when shouldn't we?</p>
+            <ul>
+              <li>Generative AI doesn't think, understand or know things the way people do.</li>
+              <li>It predicts patterns in language remarkably well, which lets it produce useful, creative and often impressive responses.</li>
+              <li>It can hallucinate — sound confident while being wrong — so always verify important facts.</li>
+              <li>The better we understand its strengths and limitations, the better equipped we are to use it responsibly.</li>
+            </ul>
+            <p>The next question is the most important one: when should we use it, and when shouldn't we?</p>
           </div>
         </div>
       </section>
@@ -366,16 +373,6 @@
             <div class="tile"><div class="tile__icon"><svg class="icon"><use href="#i-lock"/></svg></div><h3>Privacy matters</h3><p>Information entered into AI tools may be processed outside the university. Before using AI, consider whether the data is personal, confidential or commercially sensitive, and follow institutional guidance.</p></div>
             <div class="tile"><div class="tile__icon"><svg class="icon"><use href="#i-copyright"/></svg></div><h3>Copyright and IP</h3><p>The relationship between AI and copyright is still evolving. Consider whether outputs incorporate copyrighted material, whether you may upload existing content, and how AI use should be acknowledged.</p></div>
             <div class="tile"><div class="tile__icon"><svg class="icon"><use href="#i-leaf"/></svg></div><h3>Environmental impact</h3><p>Training and running large models takes significant energy. Individual prompts use little, but responsible AI means using these tools thoughtfully rather than unnecessarily.</p></div>
-          </div>
-
-          <div class="callout callout--takeaway">
-            <p class="callout__title"><span class="km-pill">Key message</span>A powerful assistant, not a decision-maker</p>
-            <ul>
-              <li>Generative AI is a powerful assistant, not an independent decision-maker.</li>
-              <li>It helps you work more efficiently, explore ideas, analyse information and create content.</li>
-              <li>Professional expertise, critical thinking, ethical judgement and accountability remain uniquely human.</li>
-              <li>The most effective users know when to trust it, when to question it, and when to rely on their own expertise instead.</li>
-            </ul>
           </div>
 
           <!-- Activity 1: AI or Human? spectrum -->
@@ -448,6 +445,16 @@
                 <li><strong>Subtle bias:</strong> “simply less committed and less capable” — a biased assumption that ignores caring responsibilities, illness, work and access. AI can reproduce bias from its training data.</li>
               </ul>
             </div>
+          </div>
+
+          <div class="callout callout--takeaway">
+            <p class="callout__title"><span class="km-pill">Key message</span>A powerful assistant, not a decision-maker</p>
+            <ul>
+              <li>Generative AI is a powerful assistant, not an independent decision-maker.</li>
+              <li>It helps you work more efficiently, explore ideas, analyse information and create content.</li>
+              <li>Professional expertise, critical thinking, ethical judgement and accountability remain uniquely human.</li>
+              <li>The most effective users know when to trust it, when to question it, and when to rely on their own expertise instead.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -547,10 +554,10 @@
           <h2>A coordinated approach</h2>
           <p>Artificial Intelligence has implications for every part of the university — teaching and assessment, research, professional services, student support, digital systems, governance and institutional strategy. No single person or department can address all of these alone. SETU has therefore established a governance structure that brings together colleagues with different expertise to ensure AI is integrated thoughtfully, ethically and strategically.</p>
 
-          <div class="placeholder">
-            <span class="placeholder__flag">SETU graphic to insert</span>
-            <p><strong>AI Governance Structure graphic.</strong> Insert the diagram of SETU's AI governance structure here (committees, working groups and reporting lines).</p>
-          </div>
+          <figure class="figure">
+            <img class="figure__img" src="assets/img/ai-governance.png" alt="AI Governance at SETU: Academic Council provides oversight and strategic direction; the Academic Lead for GenAI leads academic strategy for Generative AI, working alongside a new Operations Lead for GenAI role supporting AI operations and systems; the GenAI Steering Committee provides strategic guidance and coordination; six working groups — Research, Library, Students, Capacity Building, PMSS, and Guidelines &amp; Strategy — report into the steering committee." />
+            <figcaption>SETU's AI governance structure: a coordinated, collaborative approach to responsible AI.</figcaption>
+          </figure>
 
           <p>This structure helps to:</p>
           <ul>
@@ -603,16 +610,6 @@
             <p>Responsible AI isn't owned by a committee or one department. Every member of staff contributes to how AI is used across the university. The governance structure provides the support, the guidance provides the framework, and the technology provides the tools — but it is people, their expertise, judgement and values, that ensure AI is used responsibly.</p>
           </div>
 
-          <div class="callout callout--takeaway">
-            <p class="callout__title"><span class="km-pill">Key message</span>How SETU supports responsible AI</p>
-            <ul>
-              <li>A <strong>coordinated approach</strong> — governance, working groups and guidance, not a single policy or committee.</li>
-              <li>Practical resources help you make informed decisions in your day-to-day work.</li>
-              <li>Assessment is being redesigned <em>for</em> an AI-enabled world, not just to police AI.</li>
-              <li><strong>We all have something to contribute</strong> — your decisions shape SETU's AI culture.</li>
-            </ul>
-          </div>
-
           <h2>Continue your journey</h2>
           <p>The <strong>AI at SETU</strong> website brings together everything in this course — the latest guidance and policies, practical resources and templates, case studies, workshops and events, communities of practice, and updates as AI evolves. Responsible AI isn't something we achieve once; it's something we continue to develop together as a university community.</p>
             <p><strong><a href="https://ai.setu.ie/" target="_blank">Visit the AI at SETU website</a></strong></p>
@@ -632,6 +629,16 @@
               </ul>
               <p><strong>Responsible AI begins long before the technology is switched on.</strong></p>
             </div>
+          </div>
+
+          <div class="callout callout--takeaway">
+            <p class="callout__title"><span class="km-pill">Key message</span>How SETU supports responsible AI</p>
+            <ul>
+              <li>A <strong>coordinated approach</strong> — governance, working groups and guidance, not a single policy or committee.</li>
+              <li>Practical resources help you make informed decisions in your day-to-day work.</li>
+              <li>Assessment is being redesigned <em>for</em> an AI-enabled world, not just to police AI.</li>
+              <li><strong>We all have something to contribute</strong> — your decisions shape SETU's AI culture.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -932,10 +939,15 @@
 
           <div class="callout callout--info" style="text-align:left">
             <p class="callout__title">Where next</p>
-            <p>The next stage of your learning journey is to develop your <strong>AI Competency</strong> through role-specific courses that explore practical applications in greater depth — whether your focus is teaching, research, professional services or leadership. [SETU to confirm: add the enrolment link for Course 2.]</p>
+            <p>The next stage of your learning journey is to develop your <strong>AI Competency</strong> through role-specific courses that explore practical applications in greater depth — whether your focus is teaching, research, professional services or leadership.</p>
           </div>
           <div class="btn-row" style="justify-content:center">
             <button class="btn btn--ghost" data-goto="0"><svg class="icon"><use href="#i-arrow-left"/></svg> Back to the start</button>
+          </div>
+
+          <hr class="rule" />
+          <div class="credits">
+            <p>This course was developed using Claude Code using a script developed by Dr Hazel Farrell, images were generated using ChatGPT.</p>
           </div>
         </div>
       </section>
@@ -967,6 +979,18 @@
         <div><span>Date</span><b id="certDate">—</b></div>
         <div><span>Programme</span><b>SETU GenAI · Course 1 of 3</b></div>
       </div>
+    </div>
+  </div>
+
+  <!-- Image lightbox — lives at body level, populated on demand -->
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox__backdrop" data-lightbox-close></div>
+    <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close image">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+      <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+      <p class="lightbox__caption" id="lightboxCaption"></p>
     </div>
   </div>
 
